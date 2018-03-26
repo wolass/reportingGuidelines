@@ -1,0 +1,264 @@
+---
+title: "The area of focus a case report" #Title – The area of focus and “case report” should appear in the title
+author:
+  - Firstname Lastname^1^ 
+  - Firstnamea Lastnamea^2^
+# institute: # this is not implemented in the rrtools but it would be eventually necessary
+date: <div align="right">`r format(Sys.time(), '%d.%m.%Y')`</div>
+output: 
+  bookdown::word_document2:
+    fig_caption: yes
+    #reference_docx: "../templates/templBreaks.docx" # Provide the reference word template for styling
+#bibliography: references.bib # Provide references
+#csl: mee.csl # Style file for bibliography style 
+keywords: | 
+  keyword 1; keyword 2; keyword 3 
+# Key Words – Two to five key words that identify topics in this case report
+# highlights: |
+#  These are the highlights. # uncomment if the journal uses highlights for case reports 
+---
+
+<!--
+General Tips: 
+
+First: Clearly identify the message you wish to communicate. Is this case report about an outcome, a diagnostic assessment, an intervention, a new or rare disease, or something else?
+
+Second: Create a timeline of your case report—a visual summary of the case report (see examples of timelines that follow the CARE guidelines).
+
+Third: Complete the remainder of the case report using specialty-specific information if necessary with appropriate scientific references. Write the abstract last.
+
+Patient information should be de-identified and informed consent obtained prior to submitting your case report to a journal. If the patient is a minor or unable to give informed consent seek consent from a close relative.
+
+Writing Sequence
+Part 1 — Working Title, Timeline, Narrative
+
+1. Develop a descriptive and succinct working title that describes the phenomenon of greatest interest (symptom, diagnostic test, diagnosis, intervention, outcome).
+
+2. Create a timeline as a chronological summary of an episode of care as a figure or table. This should begin with antecedents and past medical history through the outcome. Examples are available on the CARE website.
+
+3. Narrative of the episode of care (including tables and figures as needed.)
+
+3.1. The presenting concerns (chief complaints) and relevant demographic information.
+
+3.2. Clinical findings describe the relevant past medical history, pertinent co-morbidities, and important physical examination (PE) findings.
+
+3.3. Diagnostic assessments discuss diagnostic testing and results, differential diagnoses, and the diagnosis.
+
+3.4. Therapeutic interventions describe the types of intervention (pharmacologic, surgical, preventive, lifestyle) and how the interventions were administered (dosage, strength, duration and frequency). Tables or figures may be useful.
+
+3.5. Follow-up and outcomes describes the clinical course of the episode of care during follow-up visits including (1) intervention modification, interruption, or discontinuation; (2) intervention adherence and how this was assessed; and (3) adverse effects or unanticipated events. Regular patient report outcome measurement surveys at such as PROMIS® may be helpful.
+
+
+Part 2 — Introduction, Discussion (including limitations), Conclusion
+
+1. The introduction should briefly summarize why this case report is important and cite one of the CARE articles (eg, Gagnier JJ, Kienle G, Altman DG, Moher D, Sox H, Riley D, et al. The CARE Guidelines: Consensus-based Clinical Case Reporting Guideline Development. Glob Adv Health Med. 2013 Sep;2(5):38-43)
+
+2. The discussion describes case management, including strengths and limitations with scientific references.
+
+3. The conclusion offers the most important findings from the case.
+
+
+Part 3 — Abstract, Key Words, References, Acknowledgement, Informed Consent
+
+1. Abstract. Briefly summarize in a structured or unstructured format the relevant information without citations. Do this after writing the case report. Information should include: (1) Background, (2) Key points from the case; and (3) Main lessons to be learned from this case report.
+
+2. Key Words. Provide 2 to 5 key words that will identify important topics covered by this case report.
+
+3. References. Appropriately chosen references from the peer-reviewed scientific literature.
+
+4. Acknowledgement. A short acknowledgement section should mention funding support or conflicts of interest, if applicable.
+
+5. Informed Consent. The patient should provide informed consent and the author should provide this information if requested. Rarely, additional approval may be needed.
+
+6. Appendices. If indicated.
+Submission to a scientific journal
+
+Follow journal submission requirements when writing and submitting your case report. You may wish to contact the journal before submitting your manuscript if you have any questions. 
+--->
+
+
+
+<!-- This is the format for text comments that will be ignored during renderings. Do not put R code in these comments because it will not be ignored. -->
+
+```{r, setup, echo = FALSE,include=F}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  echo = FALSE,
+  comment = "#>",
+  fig.path = "../figures/"
+)
+options(digits = 1,scipen = 999)
+devtools::load_all(".")
+require(magrittr)
+# devtools::install_github("coolbutuseless/lipsum") #install if missing
+clips <- function(n){
+  o <- sample(1:1183,n)
+  lipsum::lipsums[o] %>% paste(collapse = " ")
+}
+
+```
+
+<!-- INSTITUTES - please list all the institutions that were involved and affiliated with this research, in the author's order with numberings in superscript -->
+
+^1^ Division of X, Department of Y, University of Z, Address 1, 10117 City,
+
+^2^ Division of X2, Department of Y2, University of Z2, Address 1, 10117 City,
+
+
+**Corresponding author:**
+Prof. Dr. med. X. Why Zet (xyz@uni.edu)
+Phone: ;      Fax: 
+ 
+**Disclosures:** 
+<!-- Disclosures: failure to disclose potential conflicts of interests may result in rejection of the manuscript. -->
+<!-- a.       Statement of all funding that supported the work must be clearly indicated; -->
+<!-- b.      All conflicts of interests must be given [Each author is responsible for disclosing all financial and personal relationships that might be perceived by others as biasing their work. Authors MUST state whether potential conflicts exist or not. This will be recorded in the publication]; -->
+This work was supported by... Authors disclose no potential conflicts of interest. 
+
+
+**Author contributions:**
+<!-- a.       Each author should have participated sufficiently to take public responsibility for appropriate portions of the work and consented to the final, submitted version. Each author's contributions need to be clearly stated. All other individuals should be named in the Acknowledgements (see below); -->
+XY wrote the original manuscript, revised it critically and analyzed the data.
+ZY YX both analyzed the data and revised the manuscript critically.
+
+**Running head:**
+ <!-- If the title exceeds 40 characters (letters and spaces) a running head of no more than 40 characters can be provided (important for some journals). -->
+Shorter title.
+
+**Abstract:** <!--Here the abstract is in the main text, but it could also be in the yaml-->
+<!-- Abstract – (structure or unstructured) if unstructured put thiese elemets in separate paragraphs. 
+The main diagnoses, interventions, and outcomes.
+Conclusion—What are one or more “take-away” lessons?-->
+
+
+_Introduction_: `r clips(3)` 
+<!--Introduction – What is unique and why is it important?-->
+
+_Case report_: `r clips(3)`
+<!-- 1.The patient’s main concerns and important clinical findings. -->
+<!-- 2. The main diagnoses, interventions, and outcomes. -->
+
+_Conclusion_: `r clips(3)`
+<!-- Conclusion—What are one or more “take-away” lessons? -->
+
+**Keywords:**   
+<!-- Below the abstract, If the rendering from the template does not work than use it like this -->
+
+# Introduction
+<!--  Introduction – Briefly summarize why this case is unique with medical literature references. -->
+
+# Patient Information
+<!-- De-identified demographic and other patient information. -->
+
+<!-- Main concerns and symptoms of the patient. -->
+
+<!-- Medical, family, and psychosocial history including genetic information. -->
+
+<!-- Relevant past interventions and their outcomes. -->
+
+This is how to cite a table (table \@ref(tab:tab1)).
+
+This is how to cite a figure (Fig. \@ref(fig:fig1)).
+
+
+# Clinical Findings
+<!-- Clinical Findings – Relevant physical examination (PE) and other clinical findings. -->
+
+# Timeline
+<!-- Timeline – Relevant data from this episode of care organized as a timeline (figure or table). -->
+
+# Diagnostic Assessment
+<!-- Diagnostic methods (PE, laboratory testing, imaging, surveys). -->
+
+<!-- Diagnostic challenges. -->
+
+<!-- Diagnostic reasoning including differential diagnosis. -->
+
+<!-- Prognostic characteristics when applicable. -->
+
+# Therapeutic Intervention
+<!-- Types of intervention (pharmacologic, surgical, preventive). -->
+<!-- Administration of intervention (dosage, strength, duration). -->
+<!-- Changes in the interventions with explanations. -->
+
+
+# Follow-up and Outcomes
+<!-- Clinician and patient-assessed outcomes when appropriate. -->
+
+<!-- Important follow-up diagnostic and other test results. -->
+
+<!-- Intervention adherence and tolerability (how was this assessed)? -->
+
+<!-- Adverse and unanticipated events. -->
+
+
+# Discussion
+<!-- Strengths and limitations in your approach to this case. -->
+
+<!-- Discussion of the relevant medical literature. -->
+
+<!-- The rationale for your conclusions. -->
+
+<!-- The primary “take-away” lessons from this case report. -->
+
+
+# Patient Perspective 
+<!-- The patient can share their perspective on their case. -->
+
+# Informed Consent 
+<!-- The patient should give informed consent. -->
+
+# Acknowledgements
+<!-- Optional - Acknowledgments - Acknowledge only persons who have made substantive contributions to the study. Authors are responsible for obtaining written permission from everyone acknowledged by name because readers may infer their endorsement of the data and conclusions.  -->
+We acknowledge and thank the X.
+
+# References 
+<!-- References - Number references consecutively in the order in which they are first mentioned in the text. Identify references in text, tables and legends by Arabic numerals (in parentheses). All publications cited, and only these, must be listed at the end of the paper. The following line is needed for the proper placement of the references -->
+
+<div id="refs"></div> 
+
+<!-- USE this ##### pattern to perform a pagebreak -->
+##### 
+
+# Tables 
+<!-- Tables - Tables should be numbered consecutively with Arabic numerals. Type each table on a separate sheet, with titles and footnotes making them self-explanatory. -->
+
+```{r tab1}
+knitr::kable(mtcars[1:6,], 
+             caption = "The Title of a table comes here.")
+```
+
+
+#####    
+
+# Figures 
+
+<!-- Photographs - When there is any chance that a person may be identified from a picture, legend or other accompanying text - provide patient's consent. -->
+
+<!-- Legends - Figure legends should allow interpretation of the figures without reference to the main text; they should appear according to their order of appearance in the text. -->
+
+
+```{r fig1, fig.cap="This is the description of a figure. Note that it has to be written here"}
+
+plot(mpg~cyl,data = mtcars)
+```
+
+
+##### 
+
+# Online supplemental material 
+
+<!-- Any material, such as figures, tables, in-depth description of methods and results, or raw data, which is not necessary for the understanding of the overall results, may be accommodated as 'online supplemental material', i.e, material will not appear in print, but is available online, linked to the actual article. The Editor may occasionally recommend shifting part of the presentation to this format as well in the course of the review process. --> 
+
+
+<!-- Other Requirements -->
+<!-- Nomenclature - All units must be defined. -->
+
+<!-- Units of measurement must be SI Units. -->
+<!-- Chemical names and botanical extracts should be INCI, if available (http://ec.europa.eu/consumers/cosmetics/cosing/), and in preference to other common names; CAS numbers should be provided, if appropriate (e.g., 2-bromo-2-nitropropane-1,3-diol (bronopol; CAS_no. 52-51-7)). -->
+
+<!-- For drugs, the International Non-proprietary Name (INN) should be used (  http://www.who.int/medicines/services/inn/en/). -->
+
+

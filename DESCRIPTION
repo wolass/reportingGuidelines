@@ -1,0 +1,13 @@
+Package: reportingGuidelines
+Type: Package
+Title: The Reporting Guidelines for various Research communication outputs for R 
+Version: 0.1.0
+Author: Wojciech Francuzik
+Maintainer: Wojciech Francuzik <wolass@gmail.com>
+Description: This package provides Rmarkdown templates for easy and compact
+    reference when writing scientific reports. The initial idea was to help 
+    with the conformity (adherence to standards and published guidelines) 
+    when preparing the reproducible reports to be published in the scientific journals. 
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
