@@ -1,21 +1,23 @@
 ---
-title: "The area of focus a case report" #Title – The area of focus and “case report” should appear in the title
+#Title – The area of focus and “case report” should appear in the title
+title: "The area of focus a case report" 
+# list all the authors here 
 author:
   - Firstname Lastname^1^ 
   - Firstnamea Lastnamea^2^
-# institute: # this is not implemented in the rrtools but it would be eventually necessary
+institute: # this is not implemented in the rrtools but it would be eventually necessary
 date: <div align="right">`r format(Sys.time(), '%d.%m.%Y')`</div>
 output: 
   bookdown::word_document2:
     fig_caption: yes
-    #reference_docx: "../templates/templBreaks.docx" # Provide the reference word template for styling
-#bibliography: references.bib # Provide references
-#csl: mee.csl # Style file for bibliography style 
+    reference_docx: "../templates/template.docx" # Provide the reference word template for styling
+bibliography: references.bib # Provide references
+csl: mee.csl # Style file for bibliography style 
 keywords: | 
   keyword 1; keyword 2; keyword 3 
-# Key Words – Two to five key words that identify topics in this case report
-# highlights: |
-#  These are the highlights. # uncomment if the journal uses highlights for case reports 
+# Key Words – Two to five key words that identify topics in this case report - warning they do not render correctly yet. 
+highlights: |
+  These are the highlights. # uncomment if the journal uses highlights for case reports 
 ---
 
 <!--
